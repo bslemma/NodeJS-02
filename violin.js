@@ -1,18 +1,12 @@
-class Violin {
+const EventEmitter =require('events');
+class Violin extends EventEmitter{
     constructor(){
-        this.event={}
+    	super();
+    	let self=this;
+    	setInterval(function(){self.emit("note")},1000);
     }
-}
-Violin.prototype.on = function (typer,listener){
-    this.event.typer = listener;
-}
-Violin.prototype.emit = function(typer){
-      setInterval(this.event.typer,1000)
+   
 }
 var vio = new Violin();
-vio.on('myNote',function(){
-    console.log("note!")
-})
-vio.emit('myNote');
+vio.on('note',function(){ console.log("Violin is playing music")});
 
-module.exports = Violin

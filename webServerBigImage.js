@@ -11,12 +11,12 @@ const server=http.createServer(function(req,res)
     // res.end(inputImg);
     
 //3. Using Asynchronous reading 
-    // fs.readFile('./testBigImage.jpg',function(error,data)
-    // {
-    //     if(error)
-    //     res.end("Error Message");
-    //     else
-    //     res.end(data);
-    // });
+   /* fs.readFile('./testBigImage.jpg',function(error,data)
+    {
+        if(error)
+        res.end("Error Message");
+        else
+        res.end(data);
+    });*/
 });
 server.listen(4000);
